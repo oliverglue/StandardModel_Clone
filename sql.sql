@@ -6,7 +6,7 @@ SELECT
     [Posting Date]                                                      AS 'Bogføringsdato',--STD
     '***regnskab***'                                                    AS 'Regnskab',--STD
     [Amount]                                                            AS 'Beløb',--STD
-
+  	CAST([G_L Account No_] AS VARCHAR)                                  AS 'TREJDENØGLE',--STD
     CONCAT('***regnskab***', '_', 
     CAST([G_L Account No_] AS VARCHAR))                                 AS 'Key_Company_Account_No',
     CONCAT('***regnskab***','_', [Dimension Set ID])                AS 'Key_Company_Dimension Set ID', 
