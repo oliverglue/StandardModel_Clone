@@ -3,6 +3,7 @@ CREATE VIEW Finansposter AS
 SELECT 
     CAST([G_L Account No_] AS VARCHAR)                                  AS 'Kontonummer',--STD
     [Posting Date]                                                      AS 'Bogføringsdato',--STD
+    [Salesperson Code]                                                  AS 'Salgsperson',--STD
     '***regnskab***'                                                    AS 'Regnskab',--STD
     [Amount]                                                            AS 'Beløb',--STD
   	CAST([G_L Account No_] AS VARCHAR)                                  AS 'TREJDENØGLE',--STD
@@ -16,6 +17,7 @@ GO
 
 CREATE VIEW Kunde AS
 SELECT 
+[Salesperson Code]                                                  AS 'Salgsperson',--STD,
     '1_' + [No_]                                                        AS 'Key_Source_Type_Code',--STD
     [No_]                                                               AS 'Kundenummer',--STD
     C.Name                                                              AS 'Kundenavn',--STD
