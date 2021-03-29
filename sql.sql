@@ -2,9 +2,11 @@
 CREATE VIEW Finansposter AS
 SELECT 
     CAST([G_L Account No_] AS VARCHAR)                                  AS 'Kontonummer',--STD
+    CAST([G_L Account No_] AS VARCHAR)                                  AS 'ANDENNØGLE',--STD
     [Posting Date]                                                      AS 'Bogføringsdato',--STD
     '***regnskab***'                                                    AS 'Regnskab',--STD
     [Amount]                                                            AS 'Beløb',--STD
+
     CONCAT('***regnskab***', '_', 
     CAST([G_L Account No_] AS VARCHAR))                                 AS 'Key_Company_Account_No',
     CONCAT('***regnskab***','_', [Dimension Set ID])                AS 'Key_Company_Dimension Set ID', 
@@ -16,6 +18,7 @@ CREATE VIEW Kunde AS
 SELECT 
     '1_' + [No_]                                                        AS 'Key_Source_Type_Code',--STD
     [No_]                                                               AS 'Kundenummer',--STD
+    CAST([G_L Account No_] AS VARCHAR)                                  AS 'ANDENNØGLE',--STD
     C.Name                                                              AS 'Kundenavn',--STD
     [Salesperson Code]                                                  AS 'Salgsperson',--STD
     C.[Country_Region Code]                                             AS 'Landekode',
