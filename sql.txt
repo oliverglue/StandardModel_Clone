@@ -1,6 +1,4 @@
-master1_vigtigt ændring
-master1
-master_zibocare
-master2
-master3
-master3_zibocare
+SELECT 
+[Text] AS "Text"
+[STG]  AS "STG (Custom)"
+from Table
