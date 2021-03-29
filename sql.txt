@@ -1,0 +1,4 @@
+SELECT 
+[Text] AS "Text"
+[STG]  AS "STG (Custom)"
+from Table
